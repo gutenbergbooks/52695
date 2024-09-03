@@ -1,0 +1,1486 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style type="text/css">
+  /*<![CDATA[*/
+  /*
+  Project Gutenberg common docutils stylesheet.
+
+  This stylesheet contains styles common to HTML and EPUB.  Put styles
+  that are specific to HTML and EPUB into their relative stylesheets.
+
+  :Author: Marcello Perathoner (webmaster@gutenberg.org)
+  :Copyright: This stylesheet has been placed in the public domain.
+
+  This stylesheet is based on:
+
+  :Author: David Goodger (goodger@python.org)
+  :Copyright: This stylesheet has been placed in the public domain.
+
+  Default cascading style sheet for the HTML output of Docutils.
+
+  */
+
+  /* ADE 1.7.2 chokes on !important and throws all css out. */
+
+  /* FONTS */
+
+  .italics    { font-style: italic }
+  .no-italics { font-style: normal }
+
+  .bold       { font-weight: bold }
+  .no-bold    { font-weight: normal }
+
+  .small-caps { } /* Epub needs italics */
+  .gesperrt   { } /* Epub needs italics */
+  .antiqua    { font-style: italic } /* what else can we do ? */
+  .monospaced { font-family: monospace }
+
+  .smaller    { font-size: smaller }
+  .larger     { font-size: larger }
+
+  .xx-small   { font-size: xx-small }
+  .x-small    { font-size: x-small }
+  .small      { font-size: small }
+  .medium     { font-size: medium }
+  .large      { font-size: large }
+  .x-large    { font-size: x-large }
+  .xx-large   { font-size: xx-large }
+
+  .text-transform-uppercase { text-transform: uppercase }
+  .text-transform-lowercase { text-transform: lowercase }
+  .text-transform-none      { text-transform: none }
+
+  .red        { color: red }
+  .green      { color: green }
+  .blue       { color: blue }
+  .yellow     { color: yellow }
+  .white      { color: white }
+  .gray       { color: gray }
+  .black      { color: black }
+
+  /* ALIGN */
+
+  .left       { text-align: left }
+  .justify    { text-align: justify }
+  .center     { text-align: center; text-indent: 0 }
+  .centerleft { text-align: center; text-indent: 0 }
+  .right      { text-align: right;  text-indent: 0 }
+
+  /* LINE HEIGHT */
+
+  body        { line-height: 1.5 }
+  p           { margin: 0;
+              text-indent: 2em }
+
+  /* PAGINATION */
+
+  .title, .subtitle     { page-break-after:  avoid }
+
+  .container, .title, .subtitle, #pg-header
+                      { page-break-inside: avoid }
+
+  /* SECTIONS */
+
+  body         { text-align: justify }
+
+  p.pfirst, p.noindent {
+    text-indent: 0
+  }
+
+  .boxed         { border: 1px solid black; padding: 1em }
+  .topic, .note  { margin: 5% 0; border: 1px solid black; padding: 1em }
+  div.section    { clear: both }
+
+  div.line-block       { margin: 1.5em 0 }  /* same leading as p */
+  div.line-block.inner { margin: 0 0 0 10% }
+  div.line             { margin-left: 20%; text-indent: -20%; }
+  .line-block.noindent div.line { margin-left: 0; text-indent: 0; }
+
+  hr.docutils          { margin: 1.5em 40%; border: none; border-bottom: 1px solid black; }
+  div.transition       { margin: 1.5em 0 }
+
+  .vfill, .vspace      { border: 0px solid white }
+
+  .title               { margin: 1.5em 0 }
+  .title.with-subtitle { margin-bottom: 0 }
+  .subtitle            { margin: 1.5em 0 }
+
+  /* header font style */
+  /* http://dev.w3.org/csswg/css3-fonts/#propdef-font-size */
+
+  h1.title                        { font-size: 200%; }  /* for book title only */
+  h2.title, p.subtitle.level-1    { font-size: 150%; margin-top: 4.5em;  margin-bottom: 2em }
+  h3.title, p.subtitle.level-2    { font-size: 120%; margin-top: 2.25em; margin-bottom: 1.25em }
+  h4.title, p.subtitle.level-3    { font-size: 100%; margin-top: 1.5em;  margin-bottom: 1.5em;  font-weight: bold; }
+  h5.title, p.subtitle.level-4    { font-size:  89%; margin-top: 1.87em; margin-bottom: 1.69em; font-style: italic; }
+  h6.title, p.subtitle.level-5    { font-size:  60%; margin-top: 3.5em;  margin-bottom: 2.5em }
+
+  /* title page */
+
+  h1.title, p.subtitle.level-1,
+  h2.title, p.subtitle.level-2    { text-align: center }
+
+  #pg-header,
+  h1.document-title               { margin: 10% 0 5% 0 }
+  p.document-subtitle             { margin:  0  0 5% 0 }
+
+  /* PG header and footer */
+  #pg-machine-header { }
+  #pg-produced-by { }
+
+  li.toc-entry            { list-style-type: none }
+  ul.open li, ol.open li  { margin-bottom: 1.5em }
+
+  .attribution            { margin-top: 1.5em }
+
+  .example-rendered {
+    margin: 1em 5%; border: 1px dotted red;  padding: 1em; background-color: #ffd }
+  .literal-block.example-source   {
+    margin: 1em 5%; border: 1px dotted blue; padding: 1em; background-color: #eef }
+
+  /* DROPCAPS */
+
+  /* BLOCKQUOTES */
+
+  blockquote { margin: 1.5em 10% }
+
+  blockquote.epigraph { }
+
+  blockquote.highlights { }
+
+  div.local-contents { margin: 1.5em 10% }
+
+  div.abstract { margin: 3em   10% }
+  div.image    { margin: 1.5em  0  }
+  div.caption  { margin: 1.5em  0 }
+  div.legend   { margin: 1.5em  0 }
+
+  .hidden { display: none }
+
+  .invisible { visibility: hidden; color: white } /* white: mozilla print bug */
+
+  a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+  dl.docutils dd {
+  margin-bottom: 0.5em }
+
+  div.figure { margin-top: 3em; margin-bottom: 3em }
+
+  img { max-width: 100% }
+
+  div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+  div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+  div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+  ol.simple, ul.simple { margin: 1.5em 0 }
+
+  ol.toc-list,    ul.toc-list    { padding-left:  0  }
+  ol ol.toc-list, ul ul.toc-list { padding-left:  5% }
+
+  ol.arabic {
+  list-style: decimal }
+
+  ol.loweralpha {
+  list-style: lower-alpha }
+
+  ol.upperalpha {
+  list-style: upper-alpha }
+
+  ol.lowerroman {
+  list-style: lower-roman }
+
+  ol.upperroman {
+  list-style: upper-roman }
+
+  p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+  p.label {
+  white-space: nowrap }
+
+  p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+  p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+  p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+  p.topic-title, p.admonition-title {
+  font-weight: bold }
+
+  pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+  .literal-block, .doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em; }
+
+  span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+  span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+  span.interpreted {
+  font-family: sans-serif }
+
+  span.option {
+  white-space: nowrap }
+
+  span.pre {
+  white-space: pre }
+
+  span.problematic {
+  color: red }
+
+  span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 100% }
+
+  table { margin-top: 1.5em; margin-bottom: 1.5em; border-spacing: 0 }
+  table.align-left, table.align-right { margin-top: 0 }
+
+  table.table                { border-collapse: collapse; }
+
+  table.table.hrules-table thead          { border: 1px solid black; border-width: 2px 0 0 }
+  table.table.hrules-table tbody          { border: 1px solid black; border-width: 2px 0 }
+  table.table.hrules-rows  tr             { border: 1px solid black; border-width: 0 0 1px }
+  table.table.hrules-rows  tr.last        { border-width: 0 }
+  table.table.hrules-rows  td,
+  table.table.hrules-rows  th             { padding: 1ex 1em; vertical-align: middle }
+
+  table.table tr             { border-width: 0 }
+  table.table td,
+  table.table th             { padding: 0.5ex 1em }
+  table.table tr.first td    { padding-top: 1ex }
+  table.table tr.last td     { padding-bottom: 1ex }
+  table.table tr.first th    { padding-top: 1ex }
+  table.table tr.last th     { padding-bottom: 1ex }
+
+
+  table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+  table.docinfo {
+  margin: 3em 4em }
+
+  table.docutils { }
+
+  div.footnote-group          { margin: 1em 0 }
+  table.footnote td.label     { width: 2em; text-align: right; padding-left: 0 }
+
+  table.docutils td, table.docutils th,
+  table.docinfo td, table.docinfo th {
+  padding: 0 0.5em;
+  vertical-align: top }
+
+  table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+  /* used to remove borders from tables and images */
+  .borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+  table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "!important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 } /* FIXME: was !important */
+
+  h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+  h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+  ul.auto-toc {
+  list-style-type: none }
+  /*]]>*/
+  </style>
+  <style type="text/css">
+  /*<![CDATA[*/
+  /*
+  Project Gutenberg HTML docutils stylesheet.
+
+  This stylesheet contains styles specific to HTML.
+  */
+
+  /* FONTS */
+
+  /* em                { font-style: normal }
+  strong            { font-weight: normal } */
+
+  .small-caps       { font-variant: small-caps }
+  .gesperrt         { letter-spacing: 0.1em }
+
+  /* ALIGN */
+
+  .align-left       { clear: left;
+                    float: left;
+                    margin-right: 1em }
+
+  .align-right      { clear: right;
+                    float: right;
+                    margin-left: 1em }
+
+  .align-center     { margin-left: auto;
+                    margin-right: auto }
+
+  div.shrinkwrap    { display: table; }
+
+  /* SECTIONS */
+
+  body              { margin: 5% 10% 5% 10% }
+
+  /* compact list items containing just one p */
+  li p.pfirst       { margin-top: 0; margin-bottom: 0 }
+
+  .first            { margin-top: 0 !important;
+                    text-indent: 0 !important }
+  .last             { margin-bottom: 0 !important }
+
+  span.dropcap      { float: left; margin: 0 0.1em 0 0; line-height: 1 }
+  img.dropcap       { float: left; margin: 0 0.5em 0 0; max-width: 25% }
+  span.dropspan     { font-variant: small-caps }
+
+  .no-page-break    { page-break-before: avoid !important }
+
+  /* PAGINATION */
+
+  .pageno           { position: absolute; right: 95%; font: medium sans-serif; text-indent: 0 }
+  .pageno:after     { color: gray; content: '[' attr(title) ']' }
+  .lineno           { position: absolute; left:  95%; font: medium sans-serif; text-indent: 0 }
+  .lineno:after     { color: gray; content: '[' attr(title) ']' }
+  .toc-pageref      { float: right }
+
+  @media screen {
+   .coverpage, .frontispiece, .titlepage, .verso, .dedication, .plainpage
+                       { margin: 10% 0; }
+
+   div.clearpage, div.cleardoublepage
+                       { margin: 10% 0; border: none; border-top: 1px solid gray; }
+
+   .vfill              { margin:  5% 10% }
+  }
+
+  @media print {
+   div.clearpage       { page-break-before: always; padding-top: 10% }
+   div.cleardoublepage { page-break-before: right;  padding-top: 10%  }
+
+   .vfill              { margin-top: 20% }
+   h2.title            { margin-top: 20% }
+  }
+
+  /* DIV */
+  pre               { font-family: monospace; font-size: 0.9em; white-space: pre-wrap }
+  /*]]>*/
+  </style>
+  <title>THE BLESSED DAMOZEL</title>
+</head>
+<body>
+  <div class="document" id="the-blessed-damozel">
+    <h1 class="center document-title level-1 pfirst title"><span class="x-large">THE BLESSED DAMOZEL</span></h1><!-- this is the default PG-RST stylesheet -->
+    <!-- figure and image styles for non-image formats -->
+    <!-- default transition -->
+    <!-- default attribution -->
+    <!-- -*- encoding: utf-8 -*- -->
+    <div class="clearpage"></div><!-- -*- encoding: utf-8 -*- -->
+    <div class="container frontispiece">
+      <div class="vspace" style="height: 4em"></div>
+      <p class="center pfirst"><span>FLOWERS OF PARNASSUS—IV.</span></p>
+      <div class="vspace" style="height: 3em"></div>
+      <p class="center pfirst"><span class="bold">THE BLESSED DAMOZEL</span></p>
+      <div class="vspace" style="height: 3em"></div>
+      <div class="align-center auto-scaled figure margin" style="width: 69%" id="figure-81">
+        <span id="the-blessed-damozel-leaned-out"></span><img class="align-center block" style="display: block; width: 100%" alt="&quot;The blessed Damozel leaned out.&quot;" src="images/img-front.jpg" />
+        <div class="caption centerleft figure-caption margin">
+          <span class="italics">"The blessed Damozel leaned out."</span>
+        </div>
+      </div>
+      <div class="vspace" style="height: 4em"></div>
+    </div>
+    <div class="container titlepage">
+      <p class="center pfirst"><span class="bold x-large">THE BLESSED DAMOZEL<br />
+      BY DANTE GABRIEL<br />
+      ROSSETTI. WITH<br />
+      ILLUSTRATIONS BY PERCY<br />
+      BULCOCK</span></p>
+      <div class="vspace" style="height: 3em"></div>
+      <p class="center pfirst"><span class="medium">JOHN LANE: PUBLISHER<br />
+      LONDON AND NEW YORK<br />
+      1901</span></p>
+      <div class="vspace" style="height: 4em"></div>
+    </div>
+    <div class="container verso">
+      <p class="center pfirst"><span class="small">Wm. Clowes &amp; Sons, Limited, Printers, London.</span></p>
+      <div class="vspace" style="height: 4em"></div>
+    </div>
+    <p class="center pfirst"><span class="bold large">ILLUSTRATIONS.</span></p>
+    <div class="vspace" style="height: 2em"></div>
+    <p class="pfirst"><a class="reference internal" href="#the-blessed-damozel-leaned-out">"The blessed Damozel leaned out"</a> <span>. . . Frontispiece</span></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="pfirst"><a class="reference internal" href="#heading">Heading</a></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="pfirst"><a class="reference internal" href="#surely-she-leaned-o-er-me">"Surely she leaned o'er me"</a></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="pfirst"><a class="reference internal" href="#we-two-will-stand-beside-that-shrine">"'We two will stand beside that shrine'"</a></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="pfirst"><a class="reference internal" href="#and-i-myself-will-teach-to-him">"'And I myself will teach to him'"</a></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="pfirst"><a class="reference internal" href="#herself-shall-bring-us-hand-in-hand">"'Herself shall bring us, hand in hand'"</a></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="pfirst"><a class="reference internal" href="#and-laid-her-face-between-her-hands">"And laid her face between her hands"</a></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="pfirst"><a class="reference internal" href="#tailpiece">Tailpiece</a></p>
+    <div class="vspace" style="height: 4em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="align-center auto-scaled figure margin" style="width: 64%" id="figure-82">
+          <span id="heading"></span><img class="align-center block" style="display: block; width: 100%" alt="&quot;Heading&quot;" src="images/img-009.jpg" />
+          <div class="caption centerleft figure-caption margin">
+            <span class="italics">Heading</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>I.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The blessed Damozel leaned out</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>From the gold bar of Heaven:</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Her blue-grey eyes were deeper much</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Than a deep water, even.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>She had three lilies in her hand,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>And the stars in her hair were seven.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>II.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Her robe, ungirt from clasp to hem,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>No wrought flowers did adorn,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>But a white rose of Mary's gift</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>On the neck meetly worn;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>And her hair, lying down her back,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Was yellow like ripe corn.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>III.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Herseemed she scarce had been a day</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>One of God's choristers;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>The wonder was not yet quite gone</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>From that still look of hers;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Albeit to them she left, her day</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Had counted as ten years.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>IV.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>(To</span> <em class="italics">one</em> <span>it is ten years of years</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>. . . Yet now, here in this place,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Surely she leaned o'er me,—her hair</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Fell all about my face . . .</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Nothing: the Autumn-fall of leaves.</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The whole year sets apace.)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <div class="align-center auto-scaled figure margin" style="width: 67%" id="figure-83">
+      <span id="surely-she-leaned-o-er-me"></span><img class="align-center block" style="display: block; width: 100%" alt="&quot;Surely she leaned o'er me.&quot;" src="images/img-013.jpg" />
+      <div class="caption centerleft figure-caption margin">
+        <span class="italics">"Surely she leaned o'er me."</span>
+      </div>
+    </div>
+    <div class="vspace" style="height: 3em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>V.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>It was the terrace of God's house</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>That she was standing on,—</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>By God built over the sheer depth</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>In which Space is begun;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>So high, that looking downward thence,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>She could scarce see the sun.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>VI.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>It lies from Heaven across the flood</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Of ether, as a bridge.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Beneath, the tides of day and night</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>With flame and blackness ridge</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>The void, as low as where this earth</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Spins like a fretful midge.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>VII.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>But in those tracts, with her, it was</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The peace of utter light</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>And silence. For no breeze may stir</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Along the steady flight</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Of seraphim; no echo there,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Beyond all depth or height.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>VIII.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Heard hardly, some of her new friends,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Playing at holy games,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Spake, gentle-mouthed, among themselves,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Their virginal chaste names;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>And the souls, mounting up to God,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Went by her like thin flames.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>IX.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>And still she bowed herself, and stooped</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Into the vast waste calm;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Till her bosom's pressure must have made</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The bar she leaned on warm,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>And the lilies lay as if asleep</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Along her bended arm.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>X.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>From the fixt lull of heaven, she saw</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Time, like a pulse, shake fierce</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Through all the worlds. Her gaze still strove,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>In that steep gulph, to pierce</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>The swarm: and then she spake, as when</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The stars sang in their spheres.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>XI.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"I wish that he were come to me,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>For he will come," she said.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>"Have I not prayed in solemn heaven?</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>On earth, has he not prayed?</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Are not two prayers a perfect strength?</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>And shall I feel afraid?</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>XII.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"When round his head the aureole clings,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>And he is clothed in white,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>I'll take his hand, and go with him</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>To the deep wells of light,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>And we will step down as to a stream</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>And bathe there in God's sight.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <div class="align-center auto-scaled figure margin" style="width: 68%" id="figure-84">
+      <span id="we-two-will-stand-beside-that-shrine"></span><img class="align-center block" style="display: block; width: 100%" alt="&quot;'We two will stand beside that shrine.'&quot;" src="images/img-023.jpg" />
+      <div class="caption centerleft figure-caption margin">
+        <span class="italics">"'We two will stand beside that shrine.'"</span>
+      </div>
+    </div>
+    <div class="vspace" style="height: 3em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>XIII.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"We two will stand beside that shrine,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Occult, withheld, untrod,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Whose lamps tremble continually</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>With prayer sent up to God;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>And where each need, revealed, expects</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Its patient period.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>XIV.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"We two will lie i' the shadow of</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>That living mystic tree,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Within whose secret growth the Dove</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Sometimes is felt to be,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>While every leaf that His plumes touch</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Saith His name audibly.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>XV.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"And I myself will teach to him—</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>I myself, lying so—</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>The songs I sing here; which his mouth</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Shall pause in, hushed and slow,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Finding some knowledge at each pause</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>And some new thing to know."</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>XVI.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>(Alas! to</span> <em class="italics">her</em> <span>wise simple mind</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>These things were all but known</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Before: they trembled on her sense,—</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Her voice had caught their tone.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Alas for lonely Heaven! Alas</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>For life wrung out alone!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <div class="align-center auto-scaled figure margin" style="width: 68%" id="figure-85">
+      <span id="and-i-myself-will-teach-to-him"></span><img class="align-center block" style="display: block; width: 100%" alt="&quot;'And I myself will teach to him.'&quot;" src="images/img-029.jpg" />
+      <div class="caption centerleft figure-caption margin">
+        <span class="italics">"'And I myself will teach to him.'"</span>
+      </div>
+    </div>
+    <div class="vspace" style="height: 3em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>XVII.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Alas, and though the end were reached?</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Was</span> <em class="italics">thy</em> <span>part understood</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Or borne in trust? And for her sake</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Shall this too be found good?—</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>May the close lips that knew not prayer</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Praise ever, though they would?)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>XVIII.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"We two," she said, "will seek the groves</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Where the lady Mary is,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>With her five handmaidens, whose names</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Are five sweet symphonies:—</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Cecily, Gertrude, Magdalen,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Margaret, and Rosalys.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>XIX.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"Circle-wise sit they, with bound locks</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>And bosoms coveréd;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Into the fine cloths, white like flame,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Weaving the golden thread,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>To fashion the birth-robes for them</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Who are just born, being dead.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>XX.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>He shall fear haply, and be dumb.</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Then will I lay my cheek</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>To his, and tell about our love,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Not once abashed or weak:</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>And the dear Mother will approve</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>My pride, and let me speak.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <div class="align-center auto-scaled figure margin" style="width: 70%" id="figure-86">
+      <span id="herself-shall-bring-us-hand-in-hand"></span><img class="align-center block" style="display: block; width: 100%" alt="&quot;'Herself shall bring us, hand in hand.'&quot;" src="images/img-035.jpg" />
+      <div class="caption centerleft figure-caption margin">
+        <span class="italics">"'Herself shall bring us, hand in hand.'"</span>
+      </div>
+    </div>
+    <div class="vspace" style="height: 3em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>XXI.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>'Herself shall bring us, hand in hand,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>To Him round whom all souls</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Kneel—the unnumber'd solemn heads</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Bowed with their aureoles:</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>And Angels, meeting us, shall sing</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>To their citherns and citoles.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>XXII.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"There will I ask of Christ the Lord</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Thus much for him and me:—</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>To have more blessing than on earth</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>In nowise; but to be</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>As then we were,—being as then</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>At peace. Yea, verily.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>XXIII.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"Yea, verily; when he is come</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>We will do thus and thus:</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Till this my vigil seem quite strange</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>And almost fabulous;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>We two will live at once, one life;</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>And peace will be with us."</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>XXIV.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>She gazed, and listened, and then said,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Less sad of speech than mild;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>"All this is when he comes." She ceased;</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The light thrilled past her, filled</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>With Angels, in strong level lapse.</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Her eyes prayed, and she smiled.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <div class="align-center auto-scaled figure margin" style="width: 67%" id="figure-87">
+      <span id="and-laid-her-face-between-her-hands"></span><img class="align-center block" style="display: block; width: 100%" alt="&quot;And laid her face between her hands.&quot;" src="images/img-041.jpg" />
+      <div class="caption centerleft figure-caption margin">
+        <span class="italics">"And laid her face between her hands."</span>
+      </div>
+    </div>
+    <div class="vspace" style="height: 3em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>XXV.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>(I saw her smile.) But soon their flight</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Was vague 'mid the poised spheres.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>And then she cast her arms along</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The golden barriers,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>And laid her face between her hands,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>And wept (I heard her tears).</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <div class="align-center auto-scaled figure margin" style="width: 65%" id="figure-88">
+      <span id="tailpiece"></span><img class="align-center block" style="display: block; width: 100%" alt="THE END" src="images/img-045.jpg" />
+      <div class="caption centerleft figure-caption margin">
+        <span class="italics">THE END</span>
+      </div>
+    </div>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center pfirst"><span>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></p>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst"><span class="bold x-large">The Lover's Library</span></p>
+    <div class="vspace" style="height: 2em"></div>
+    <p class="center pfirst"><span class="bold large">Edited by Frederic Chapman</span></p>
+    <p class="center pnext"><span class="small">Size, 5¼ X 3 inches</span></p>
+    <p class="center pnext"><span class="small">Price 1/6 net Bound in Cloth Price 50 cents net<br />
+    Price 2/- net Bound in Leather Price 75 cents net</span></p>
+    <div class="vspace" style="height: 2em"></div>
+    <p class="noindent pfirst"><span>Vol. I. THE LOVE POEMS OF SHELLEY<br />
+    Vol. II. THE LOVE POEMS OF BROWNING<br />
+    Vol. III. THE SILENCE OF LOVE</span></p>
+    <div class="vspace" style="height: 2em"></div>
+    <p class="noindent pfirst"><span>By Edmond Holmes</span></p>
+    <p class="noindent pnext"><span>Vol. IV. THE CUPID AND PSYCHE of Apuleius in English.<br />
+    Vol. V. THE LOVE POEMS OF TENNYSON<br />
+    Vol. VI. THE LOVE POEMS OF LANDOR</span></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="center pfirst"><em class="italics">Other Volumes in Preparation</em></p>
+    <div class="vspace" style="height: 2em"></div>
+    <p class="pfirst"><span>The title of The Lover's Library is sufficiently descriptive to make explanation of the purpose of the Series almost unnecessary.</span></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="pfirst"><span>It is sought to include in a group of compact little volumes the best Love Poems of the great British poets; and from time to time a volume of prose, or a volume of modern verse which may be considered of sufficient importance, will be added to the Library.</span></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="pfirst"><span>The delicate decorations, on the pages, end papers, and covers, make the little books dainty enough for small presents, and it is hoped that those who do not receive them as presents from others will seize the opportunity of making presents to themselves.</span></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="center pfirst"><span>JOHN LANE, London &amp; New York</span></p>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center pfirst"><span>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></p>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center pfirst"><span class="bold x-large">Flowers of Parnassus</span></p>
+    <div class="vspace" style="height: 2em"></div>
+    <p class="center pfirst"><em class="italics small">A Series of Famous Poems Illustrated</em></p>
+    <p class="center pnext"><span class="bold large">Under the General Editorship of<br />
+    F. B. Money-Coutts</span></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="center pfirst"><span class="small">Demy 16mo. (5½ X 4¼), gilt top</span></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="center pfirst"><span class="small">Price 1/- net Cloth Price 50 cents net Price 1/6 net Leather Price 75 cents net</span></p>
+    <div class="vspace" style="height: 2em"></div>
+    <p class="pfirst"><span>Vol. I. Gray's Elegy and Ode on a Distant Prospect of Eton College.</span> <em class="italics">With Twelve Illustrations by J. T. Friedenson</em><span>.</span></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="pfirst"><span>Vol. II. The Statue and the Bust. By Robert Browning.</span> <em class="italics">With Nine Illustrations by Philip Connard</em><span>.</span></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="pfirst"><span>Vol. III. Marpessa. By Stephen Phillips.</span> <em class="italics">With Seven Illustrations by Philip Connard</em><span>.</span></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="pfirst"><span>IV. The Blessed Damozel. By Dante Gabriel Rossetti.</span> <em class="italics">With Eight Illustrations by Percy Bulcock</em><span>.</span></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="pfirst"><span>Vol. V. The Nut-Brown Maid. A New Version by F. B. Money-Coutts.</span> <em class="italics">With Nine Illustrations by Herbert Cole</em><span>.</span></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="pfirst"><span>Vol. VI. A Dream of Fair Women. By Alfred Tennyson.</span> <em class="italics">With Illustrations</em><span>.</span></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="pfirst"><span>Vol. VII. A Day Dream. By Alfred Tennyson.</span> <em class="italics">With Eight Illustrations by Amelia Bauerle</em><span>.</span></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="pfirst"><span>Vol. VIII. A Ballade upon a Wedding. By Sir John Suckling.</span> <em class="italics">With Nine Illustrations by Herbert Cole</em><span>.</span></p>
+    <div class="vspace" style="height: 2em"></div>
+    <p class="center pfirst"><em class="italics small">Other Volumes in Preparation.</em></p>
+    <div class="vspace" style="height: 2em"></div>
+    <p class="center pfirst"><span>JOHN LANE, London &amp; New York</span></p>
+    <div class="vspace" style="height: 6em"></div><!-- -*- encoding: utf-8 -*- -->
+    <div class="backmatter"></div>
+    <div class="cleardoublepage"></div>
+  </div>
+</body>
+</html>
